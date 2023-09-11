@@ -144,6 +144,7 @@ def news_article_recommender():
 
     scraper = NewsArticleScraper(url)
     articles = scraper.scrape()
+    # Removing unnecessary network activity by caching the scraped articles and reusing them
 
     preprocessor = TextPreprocessor()
     preprocessed_corpus = [preprocessor.preprocess(
